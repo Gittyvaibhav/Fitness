@@ -19,7 +19,8 @@
     }
   ],
   "routes": [
+    { "handle": "filesystem" },
     { "src": "/api/(.*)", "dest": "api/index.js" },
-    { "src": "/(.*)", "dest": "client/build/$1" }
+    { "src": "/(.*)", "dest": "client/build/index.html" }
   ]
 }
