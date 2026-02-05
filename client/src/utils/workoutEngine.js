@@ -1,6 +1,8 @@
 // workoutEngine.js
 // Provides a simple RepCounter and session syncing helpers to the backend.
 
+import getApiBase from "./apiBase";
+
 export class RepCounter {
   constructor({ upThreshold = 150, downThreshold = 110, onRep }) {
     this.upThreshold = upThreshold; // angle considered standing
@@ -30,8 +32,6 @@ export class RepCounter {
     this.count = 0;
   }
 }
-
-import getApiBase from "./apiBase";
 
 // Backend session helpers
 const API_BASE = getApiBase();
