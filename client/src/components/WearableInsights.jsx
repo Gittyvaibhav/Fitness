@@ -285,7 +285,7 @@ const WearableInsights = ({ authReady = true, authError = "" }) => {
     setDays([]);
     setError("");
     setCopyStatus("");
-  }, []);
+  }, [setDays]);
 
   // API fetch helpers with better error handling
   const fetchAggregate = async (token, body) => {
@@ -469,7 +469,7 @@ const WearableInsights = ({ authReady = true, authError = "" }) => {
         setIsLoading(false);
       }
     },
-    [dateRange, buildDayBuckets]
+    [dateRange, buildDayBuckets, setDays]
   );
 
   const login = useGoogleLogin({

@@ -13,11 +13,11 @@ const FoodScanner = () => {
   const [error, setError] = useState("");
 
   // Cleanup preview URL to prevent memory leaks
-  const cleanupPreview = () => {
+  const cleanupPreview = React.useCallback(() => {
     if (imagePreview) {
       URL.revokeObjectURL(imagePreview);
     }
-  };
+  }, [imagePreview]);
 
   const handleImageUpload = (e) => {
     const file = e.target.files?.[0];
@@ -170,7 +170,7 @@ const FoodScanner = () => {
     return () => {
       cleanupPreview();
     };
-  }, []);
+  }, [cleanupPreview]);
 
   return (
     <div className="content-wrapper" style={{ maxWidth: 800, margin: "0 auto", padding: "20px" }}>

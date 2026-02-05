@@ -1,12 +1,5 @@
 import React, { useState } from "react";
 import getApiBase from "../utils/apiBase";
-import {
-  calculateBMR,
-  calculateTDEE,
-  adjustCaloriesForGoal,
-  calculateMacros,
-  generateMealPlan
-} from "../utils/nutritionEngine";
 
 const API_BASE = getApiBase();
 
